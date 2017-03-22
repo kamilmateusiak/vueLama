@@ -1,6 +1,6 @@
-# vuelama
+# vueLama
 
-> Warsztaty z Vue.js
+> Workout App - Vuejs
 
 ## Build Setup
 
