@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="col-xs-12">
-        <button class="btn btn-primary center-block">Zakończ</button>
+        <button class="btn btn-primary center-block" @click="sendMessage">Zakończ</button>
       </div>
     </div>
   </div>
@@ -43,6 +43,15 @@
   export default {
     components: {
       ExerciseModal
+    },
+    methods: {
+      /**
+       * przekazywanie danych za pomocą emitowania eventu
+       */
+      sendMessage () {
+        let message = 'przekazywanie danych za pomocą emitowania eventu'
+        this.$emit('messageWithEventEmit', message)
+      }
     }
   }
 </script>

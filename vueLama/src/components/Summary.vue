@@ -37,6 +37,22 @@
     <div class="alert alert-success center-block" role="alert" style="max-width: 400px;">
       <b>Czas: </b>40 minut - lepiej niż założyłeś, nice!
     </div>
-    <button class="btn btn-primary center-block">Wróć do strony głównej</button>
+    <button class="btn btn-primary center-block" @click="sendMessage">Wróć do strony głównej</button>
   </div>
 </template>
+
+<script>
+  import { eventBus } from '../main'
+
+  export default {
+    methods: {
+      /**
+       * przesyłanie danych bez konieczności tworzenia w eventBus metod
+       */
+      sendMessage () {
+        let message = 'eventBus i druga metoda przekazywania danych z jego pomocą'
+        eventBus.$emit('messageWithEventBus2', message)
+      }
+    }
+  }
+</script>

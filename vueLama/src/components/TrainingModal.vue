@@ -1,7 +1,7 @@
 <template>
-  <div class="modal fade bs-example-modal-sm in" style="display: block;" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal fade bs-example-modal-sm in" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
     <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content" style="padding: 10px">
+      <div class="modal-content" style="padding: 10px; overflow: hidden;">
         <h1>Start</h1>
         <div class="col-xs-8 col-xs-offset-2">
           <div class="panel panel-primary">
@@ -30,9 +30,27 @@
           </form>
         </div>
         <div class="col-xs-12">
-          <button class="btn btn-primary center-block">Rozpocznij trening</button>
+          <!-- na click używamy funkcji przekazanej przez propsy i zmieniamy dane w innym komponencie -->
+          <button class="btn btn-primary center-block" @click="fnChangeMessage">Rozpocznij trening</button>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    /**
+     * przez propsy przekazujemy funkcję
+     * tutaj pokazane jak można walidować przekazywane do komponentów props
+     * teraz props to obiekt, a nie tablica jak w SingleTraining.vue
+     * https://vuejs.org/v2/guide/components.html#Prop-Validation
+     */
+    props: {
+      fnChangeMessage: {
+        type: Function,
+        required: true
+      }
+    }
+  }
+</script>

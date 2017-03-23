@@ -2,7 +2,8 @@
   <div class="wrapper">
     <div class="containter">
       <trainings></trainings>
-      <workout></workout>
+      <!-- nasłuchujemy czy z komponentu został wyemitowany event, w $event mamy dane które przesyłamy -->
+      <workout @messageWithEventEmit="getMessage($event)"></workout>
       <workout-summary></workout-summary>
     </div>
   </div>
@@ -15,13 +16,15 @@
 
   export default {
     name: 'app',
-    methods: {
-
-    },
     components: {
       Trainings,
       Workout,
       WorkoutSummary: Summary
+    },
+    methods: {
+      getMessage (message) {
+        console.log(message)
+      }
     }
   }
 </script>
