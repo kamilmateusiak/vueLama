@@ -7,13 +7,13 @@
 </head>
 <body>
   <div id="app">
-    <div class="container">
-      <div class="text-center">
-        <h1>{{ title }}</h1>
-        <p>{{ msg }}</p>
-      </div>
-    </div>
-
+    <ul>
+      <li v-for="fruit in fruits">{{ fruit }}</li>
+    </ul>
+    <button class="btn btn-primary" @click="onClick">Click</button>
+    <input type="text" v-model="name">
+    <input type="text" v-model="surname">
+    <p>{{ fullname }}</p>
   </div>
 
   <script src="app.js"></script>
