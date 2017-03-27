@@ -5,6 +5,9 @@ export const eventBus = new Vue({
   methods: {
     logMessage (message) {
       this.$emit('messageWithEventBus1', message)
+    },
+    closeModal () {
+      this.$emit('closingModal')
     }
   }
 })

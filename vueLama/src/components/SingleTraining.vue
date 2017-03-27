@@ -4,7 +4,7 @@
       <div class="panel-heading">{{ training.name }}</div>
       <div class="panel-body">
         <p>{{ training.description }}</p>
-        <button class="btn btn-primary center-block" @click="sendMsg">Wybierz</button>
+        <button class="btn btn-primary center-block" @click="chooseTraining">Wybierz</button>
       </div>
     </div>
   </div>
@@ -22,8 +22,9 @@
       /**
        * funkcja korzystająca ze zdefiniowanej metody w eventBus
        */
-      sendMsg () {
-        eventBus.logMessage('eventBus i piersza metoda przekazywania danych z jego pomocą')
+      chooseTraining () {
+        this.$emit('trainingWasChosen', this.training)
+        console.log(eventBus)
       }
     }
   }
