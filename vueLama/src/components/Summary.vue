@@ -52,6 +52,7 @@
       sendMessage () {
         let message = 'eventBus i druga metoda przekazywania danych z jego pomocą'
         eventBus.$emit('messageWithEventBus2', message)
+        this.$router.push('/')
       }
     }
   }

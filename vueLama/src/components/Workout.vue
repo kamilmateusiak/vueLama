@@ -113,6 +113,7 @@
       },
       finishWorkout () {
         this.trainingStatus = false
+        this.$router.push('/summary')
       },
       openModal (exercise) {
         this.chosenExercise = exercise

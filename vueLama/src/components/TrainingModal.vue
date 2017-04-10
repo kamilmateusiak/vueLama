@@ -59,6 +59,7 @@
           timeGoal: this.timeGoal,
           weightGoal: this.weightGoal
         })
+        this.$router.push({ name: 'workout' })
       }
     }
   }
